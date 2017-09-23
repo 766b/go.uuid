@@ -631,3 +631,12 @@ func TestNewV5(t *testing.T) {
 		t.Errorf("UUIDv3 generated same UUIDs for sane names in different namespaces: %s and %s", u1, u4)
 	}
 }
+
+func TestIsZero(t *testing.T) {
+	u1 := Nil
+	u2, _ := FromString("00000000-0000-0000-0000-000000000000")
+
+	if !u1.IsZero() || !u2.IsZero() {
+		t.Errorf("UUID should be zero")
+	}
+}

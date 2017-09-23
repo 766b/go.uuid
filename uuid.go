@@ -171,7 +171,7 @@ func Equal(u1 UUID, u2 UUID) bool {
 
 // IsZero reports whether UUID is equal to Nil
 func (u UUID) IsZero() bool {
-	return bytes.Equal(u[:], Nil[:])
+	return u == Nil
 }
 
 // Version returns algorithm version used to generate UUID.
