@@ -121,3 +121,10 @@ func BenchmarkMarshalToString(b *testing.B) {
 		sink = u.String()
 	}
 }
+
+func BenchmarkIsZero(b *testing.B) {
+	u := Nil
+	for i := 0; i < b.N; i++ {
+		u.IsZero()
+	}
+}
